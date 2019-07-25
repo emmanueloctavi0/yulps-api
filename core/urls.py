@@ -8,4 +8,5 @@ app_name = 'auth'
 urlpatterns = [
     path('signup/', views.CreateUserViewset.as_view(), name='create'),
     path('token/', views.ObtainAuthTokenView.as_view(), name='token'),
+    path('me/', views.UserView.as_view(), name='me'),
 ]

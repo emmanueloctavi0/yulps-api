@@ -3,7 +3,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model, authenticate
 
 
-class CreateUserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
 
     password_confirmation = serializers.CharField(write_only=True)
 
@@ -20,7 +20,8 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         """Verficar que las contraseñas coinciden"""
-        if data['password'] != data['password_confirmation']:
+
+        if data.get('password') != data.get('password_confirmation'):
             raise serializers.ValidationError(
                 "Password confirmation doesn't match"
             )
@@ -29,6 +30,17 @@ class CreateUserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data.pop('password_confirmation')
         return get_user_model().objects.create_user(**validated_data)
+
+    def update(self, instance, validated_data):
+        """Update a user, setting the password correctly and return it"""
+        password = validated_data.pop('password', None)
+        user = super().update(instance, validated_data)
+
+        if password:
+            user.set_password(password)
+            user.save()
+
+        return user
 
 
 class ObteinAuthTokenSerializer(serializers.Serializer):
