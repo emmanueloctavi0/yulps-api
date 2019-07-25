@@ -40,6 +40,10 @@ INSTALLED_APPS = [
 
     # Locals
     'core',
+
+    # 3th
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
