@@ -10,6 +10,7 @@ class AdminUser(admin.ModelAdmin):
         ('is_staff', 'is_superuser', 'is_active',),
         ('groups',),
         ('created_at', 'updated_at',),
+        ('password',),
     )
     readonly_fields = ('created_at', 'updated_at', 'last_login',)
 

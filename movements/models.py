@@ -8,6 +8,8 @@ class MovementCategory(AbstractBaseModel):
     """Modelo para las categorias de los movimientos"""
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
+    is_entry = models.BooleanField(default=False)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     def __str__(self):
         """Regresa el nombre de la categoria"""
@@ -18,7 +20,6 @@ class Movement(AbstractBaseModel):
     """Modelo de un movimiento financiero"""
     detail = models.CharField(max_length=255)
     mount = models.FloatField()
-    is_entry = models.BooleanField(default=False)
     iso_code = models.CharField(max_length=50, default='MXN')
 
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)

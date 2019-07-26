@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('v1/auth/', include('core.urls')),
+    path('v1/', include('movements.urls')),
 ]
