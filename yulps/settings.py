@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Locals
     'core',
+    'movements',
 
     # 3th
     'rest_framework',
