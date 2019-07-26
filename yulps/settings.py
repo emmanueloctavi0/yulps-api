@@ -129,3 +129,13 @@ STATIC_URL = '/static/'
 
 # Usando nuestro modelo user
 AUTH_USER_MODEL = 'core.User'
+
+# Api settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
