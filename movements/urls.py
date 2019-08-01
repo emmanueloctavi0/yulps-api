@@ -7,6 +7,7 @@ from . import views
 
 router = DefaultRouter()
 router.register('categories', views.CategoryViewSet, basename='categories')
+router.register('movements', views.MovementViewSet, basename='movements')
 
 app_name = 'movement'
 
