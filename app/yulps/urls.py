@@ -10,4 +10,5 @@ urlpatterns = [
     path('v1/', include('movements.urls')),
 
     path('login/', LoginView.as_view(), name='login'),
+    path('', include('frontend.urls')),
 ]
