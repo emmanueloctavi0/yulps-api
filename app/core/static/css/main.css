@@ -1,3 +1,26 @@
-body {
-    background: red;
+@import '/static/fonts/index.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    height: 60px;
+    background: #E67E22;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.logo {
+    margin-left: 20px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
