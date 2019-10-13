@@ -146,3 +146,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
+# Media
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/media/'
+
+# Login
+LOGIN_URL = '/login/'

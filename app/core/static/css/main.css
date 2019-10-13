@@ -6,6 +6,20 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content-login {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/static/img/login.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
 .navbar {
     height: 60px;
     background: #E67E22;
@@ -23,4 +37,44 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 0.4em;
+}
+
+.form input {
+    border-radius: 3px;
+    border: 1px solid #eee;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    font-size: 16px;
+}
+
+.form button {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: 400;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form button:hover {
+    background-color: #1e7e34;
+    border-color: #1c7430;
 }
